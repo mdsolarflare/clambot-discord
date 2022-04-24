@@ -73,5 +73,5 @@ def search_on_youtube(term, channel):
     ).execute()
     return resp["items"][0]["id"]["videoId"]
 
-
-bot.run("my token")
+token = open('./tok.tok', 'r').read()
+bot.run(token)
