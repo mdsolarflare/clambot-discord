@@ -1,4 +1,4 @@
-
+# Clam Bot
 
 import discord
 from discord.ext import commands
@@ -9,16 +9,9 @@ import urllib.parse
 import re
 import json
 from googleapiclient.discovery import build
+from google.cloud import secretmanager
 
-# Install Google Libraries
-#from google.cloud import secretmanager
-# Setup the Secret manager Client
-#google_secret_manager = secretmanager.SecretManagerServiceClient()
-# get the secret
-#resource_name = 'projects/heyy-dev-site/secrets/heyy-dev-discord/versions/latest'
-#response = google_secret_manager.access_secret_version(name=resource_name)
-#discord_key = response.payload.data.decode('UTF-8')
-#print('secret: {0}'.format(discord_key)
+
 
 intents = discord.Intents.default()
 intents.members = True
@@ -73,5 +66,18 @@ def search_on_youtube(term, channel):
     ).execute()
     return resp["items"][0]["id"]["videoId"]
 
-token = open('./tok.tok', 'r').read()
-bot.run(token)
+def get_local_token():
+    token = open('./tok.tok', 'r').read()
+
+def get_gcp_secret():
+    # Setup the Secret manager Client
+    #google_secret_manager = secretmanager.SecretManagerServiceClient()
+    # get the secret
+    #resource_name = 'projects/heyy-dev-site/secrets/heyy-dev-discord/versions/latest'
+    #response = google_secret_manager.access_secret_version(name=resource_name)
+    #discord_key = response.payload.data.decode('UTF-8')
+    #print('secret: {0}'.format(discord_key)
+
+
+
+bot.run(get_local_token())
