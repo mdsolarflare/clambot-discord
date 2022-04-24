@@ -77,6 +77,7 @@ def get_gcp_secret():
     #response = google_secret_manager.access_secret_version(name=resource_name)
     #discord_key = response.payload.data.decode('UTF-8')
     #print('secret: {0}'.format(discord_key)
+    print('not implemented')
 
 
 
