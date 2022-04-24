@@ -41,6 +41,10 @@ async def on_message(message):
             await message.channel.send('Hello!')
 
 @bot.command()
+async def source(ctx):
+    await ctx.send(f'Hi, the deep sea location of my source code is here:{https://github.com/mdsolarflare/clambot-discord}')
+
+@bot.command()
 async def find(ctx, search_term):
     #request = urllib.request.Request(url='https://www.reddit.com/r/dogs/.json', method='GET')
     response = urllib.request.urlopen('https://www.reddit.com/r/dogs/.json')
