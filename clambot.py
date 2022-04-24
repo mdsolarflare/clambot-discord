@@ -42,7 +42,9 @@ async def on_message(message):
 
 @bot.command()
 async def source(ctx):
-    await ctx.send(f'Hi, the deep sea location of my source code is here:{https://github.com/mdsolarflare/clambot-discord}')
+    await ctx.send(f'Hi, the deep sea location of my source code is here: https://github.com/mdsolarflare/clambot-discord')
+
+# should add a "is bot up?" command
 
 @bot.command()
 async def find(ctx, search_term):
