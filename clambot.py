@@ -68,6 +68,7 @@ def search_on_youtube(term, channel):
 
 def get_local_token():
     token = open('./tok.tok', 'r').read()
+    return token
 
 def get_gcp_secret():
     # Setup the Secret manager Client
