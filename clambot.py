@@ -42,21 +42,24 @@ async def on_message(message):
 
 @bot.command()
 async def source(ctx):
-    await ctx.send(f'Hi, the deep sea location of my source code is here: https://github.com/mdsolarflare/clambot-discord')
+    await ctx.send('Hi, the deep sea location of my source code is here: https://github.com/mdsolarflare/clambot-discord')
 
-# should add a "is bot up?" command
+def get_reddit(ctx, subreddit, limit=1000):
+    try:
+        json_blob = json.loads(urllib.request.urlopen(f'https://www.reddit.com/r/{subreddit}/.json?limit={limit}').read())
+    except Exception as e:
+        print(f'{e}')
+        ctx.send(f'You asked for something but I could not find a subreddit for that.')
+
+    # unpack the json to get a list of urls
+    url_list = ""
+    return url_list
+
 
 @bot.command()
 async def find(ctx, search_term):
-    #request = urllib.request.Request(url='https://www.reddit.com/r/dogs/.json', method='GET')
-    response = urllib.request.urlopen('https://www.reddit.com/r/dogs/.json')
-    response_body = response.read()
-    print(f'received {response_body.data.children}')
+    # get the def for get_reddit(ctx, search_term) working first
     await ctx.send(f'Sorry, this feature is still in progress, will look for {search_term} later')
-
-@bot.command()
-async def youtube(ctx, *, search):
-    await ctx.send(this.search_on_youtube(search, ctx))
 
 def get_service():
     # Get developer key from "credentials" tab of api dashboard
@@ -71,6 +74,10 @@ def search_on_youtube(term, channel):
         videoDimension="2d",
     ).execute()
     return resp["items"][0]["id"]["videoId"]
+
+@bot.command()
+async def youtube(ctx, *, search):
+    await ctx.send(search_on_youtube(search, ctx))
 
 def get_local_token():
     token = open('./tok.tok', 'r').read()
