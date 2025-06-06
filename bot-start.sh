@@ -1,1 +1,0 @@
-nohup python3 clambot.py > error.log &

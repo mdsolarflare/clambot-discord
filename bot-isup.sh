@@ -1,1 +1,0 @@
-ps ax | grep clambot.py
