@@ -65,5 +65,7 @@ package-lock.json
 *v8.log
 /lib/
 
-# Always ignore the .env file, it has sensitive information
+# Always ignore the config.json and/or .env file, it has sensitive information
+node_modules
 .env
+config.json
