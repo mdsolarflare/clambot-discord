@@ -65,7 +65,9 @@ package-lock.json
 *v8.log
 /lib/
 
+# Typescripting
 # Always ignore the config.json and/or .env file, it has sensitive information
 node_modules
 .env
 config.json
+dist/
