@@ -64,3 +64,6 @@ package-lock.json
 .eslintcache
 *v8.log
 /lib/
+
+# Always ignore the .env file, it has sensitive information
+.env

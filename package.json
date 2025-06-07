@@ -1,5 +1,26 @@
 {
   "dependencies": {
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0"
-  }
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "name": "clambot",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "deploy-commands": "tsx src/deploy-commands.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GNU GPLv3"
 }
